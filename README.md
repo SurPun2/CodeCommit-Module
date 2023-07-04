@@ -15,6 +15,29 @@ Modules in Terraform are used to create reusable and modular code that can be ea
 ## Usage
 
 Include this repository as a module in your existing Terraform code:
+```
+module "codecommit_repository" {
+  source = "https://github.com/SurPun2/CodeCommit-Module/tree/main/codecommit"
+
+  repository_name = "X-APP"
+  description     = "Zaizi's Desk Booking App Repository"
+  default_branch  = "main"
+
+  # Creates an Iam Group with Branch Protection Policy
+  group_name = "Developers"
+
+  # Creates users with least privilege policy attached to them
+  user_name     = ["Dev1", "Dev2", "Dev3"]
+  path          = "/"
+  force_destroy = true
+
+  # Tags
+  tags = "X-App"
+}
+```
+
+or
+
 
 ```
 module "codecommit_repository" {
