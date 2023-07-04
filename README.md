@@ -41,16 +41,16 @@ or
 
 ```
 module "codecommit_repository" {
-source = "../modules/codecommit"
+  source = "../modules/codecommit"
 
-repository_name = "X-APP"
-description = "Zaizi's Desk Booking App Repository"
-default_branch = "main"
+  repository_name = "X-APP"
+  description = "Zaizi's Desk Booking App Repository"
+  default_branch = "main"
 
-group_name = "Developers"
-user_name = ["Dev1", "Dev2", "Dev3"]
-path = "/"
-force_destroy = true
+  group_name = "Developers"
+  user_name = ["Dev1", "Dev2", "Dev3"]
+  path = "/"
+  force_destroy = true
 }
 ```
 
