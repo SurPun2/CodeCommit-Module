@@ -17,7 +17,7 @@ Modules in Terraform are used to create reusable and modular code that can be ea
 Include this repository as a module in your existing Terraform code:
 ```
 module "codecommit_repository" {
-  source = "https://github.com/SurPun2/CodeCommit-Module/tree/main/codecommit"
+  source = "github.com/SurPun2/CodeCommit-Module"
 
   repository_name = "X-APP"
   description     = "Zaizi's Desk Booking App Repository"
