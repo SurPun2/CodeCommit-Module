@@ -33,6 +33,10 @@ resource "aws_iam_policy" "branch_policy" {
       }
     ]
   })
+
+  tags = {
+    Project = var.tags
+  }
 }
 
 // Attach Deny Policy to IAM Group
@@ -50,7 +54,7 @@ resource "aws_iam_user" "user" {
   force_destroy = true
 
   tags = {
-    tag-key = var.group_name
+    Project = var.tags
   }
 }
 
@@ -111,6 +115,10 @@ resource "aws_iam_policy" "least_policy" {
       }
     ]
   })
+
+  tags = {
+    Project = var.tags
+  }
 }
 
 // Attach Least Privilege Policy to IAM User
