@@ -44,13 +44,19 @@ module "codecommit_repository" {
   source = "../modules/codecommit"
 
   repository_name = "X-APP"
-  description = "Zaizi's Desk Booking App Repository"
-  default_branch = "main"
+  description     = "Zaizi's Desk Booking App Repository"
+  default_branch  = "main"
 
+  # Creates an Iam Group with Branch Protection Policy
   group_name = "Developers"
-  user_name = ["Dev1", "Dev2", "Dev3"]
-  path = "/"
+
+  # Creates users with least privilege policy attached to them
+  user_name     = ["Dev1", "Dev2", "Dev3"]
+  path          = "/"
   force_destroy = true
+
+  # Tags
+  tags = "X-App"
 }
 ```
 
